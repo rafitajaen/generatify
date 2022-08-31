@@ -4,10 +4,9 @@ import generator from 'generate-password-ts';
 @Injectable({
   providedIn: 'root'
 })
-export class PasswordService {
+export class PasswordGeneratorService {
 
   constructor() { }
-
   // https://www.npmjs.com/package/generate-password-ts
 
   getPassword(options: any): string {

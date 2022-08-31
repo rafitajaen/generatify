@@ -9,6 +9,9 @@ import { GeneratorComponent } from './sections/hero/components/generator/generat
 import { PasswordImageComponent } from './sections/hero/components/generator/password-image/password-image.component';
 import { PasswordFormComponent } from './sections/hero/components/generator/password-form/password-form.component';
 import { DogIllustrationComponent } from './illustrations/dog-illustration/dog-illustration.component';
+import { PasswordInputComponent } from './sections/hero/components/generator/password-input/password-input.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,10 +22,12 @@ import { DogIllustrationComponent } from './illustrations/dog-illustration/dog-i
     GeneratorComponent,
     PasswordImageComponent,
     PasswordFormComponent,
-    DogIllustrationComponent
+    DogIllustrationComponent,
+    PasswordInputComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
