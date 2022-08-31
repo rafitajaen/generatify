@@ -8,6 +8,7 @@ import { HeaderComponent } from './sections/hero/components/header/header.compon
 import { GeneratorComponent } from './sections/hero/components/generator/generator.component';
 import { PasswordImageComponent } from './sections/hero/components/generator/password-image/password-image.component';
 import { PasswordFormComponent } from './sections/hero/components/generator/password-form/password-form.component';
+import { DogIllustrationComponent } from './illustrations/dog-illustration/dog-illustration.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PasswordFormComponent } from './sections/hero/components/generator/pass
     HeaderComponent,
     GeneratorComponent,
     PasswordImageComponent,
-    PasswordFormComponent
+    PasswordFormComponent,
+    DogIllustrationComponent
   ],
   imports: [
     BrowserModule
