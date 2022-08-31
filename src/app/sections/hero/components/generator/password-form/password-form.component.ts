@@ -45,7 +45,7 @@ export class PasswordFormComponent implements OnInit {
     })
   }
 
-  onSubmit() {
+  regenerateEventHandler($event: any) {
     this.password = this.generator.getPassword(this.passwordForm.value);
   }
 
