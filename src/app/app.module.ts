@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
+import { RoughNotationModule } from 'ng-rough-notation';
 
 import { AppComponent } from './app.component';
 import { HeroComponent } from './sections/hero/hero.component';
@@ -12,6 +13,7 @@ import { PasswordImageComponent } from './sections/hero/components/generator/pas
 import { PasswordFormComponent } from './sections/hero/components/generator/password-form/password-form.component';
 import { DogIllustrationComponent } from './illustrations/dog-illustration/dog-illustration.component';
 import { PasswordInputComponent } from './sections/hero/components/generator/password-input/password-input.component';
+
 
 
 @NgModule({
@@ -25,11 +27,13 @@ import { PasswordInputComponent } from './sections/hero/components/generator/pas
     PasswordFormComponent,
     DogIllustrationComponent,
     PasswordInputComponent,
+
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    ClipboardModule
+    ClipboardModule,
+    RoughNotationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,6 +22,7 @@
     "@ng-icons/heroicons": "^19.0.0",
     "@popperjs/core": "^2.11.6",
     "generate-password-ts": "^1.6.3",
+    "ng-rough-notation": "^1.2.4",
     "ngx-clipboard": "^15.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
