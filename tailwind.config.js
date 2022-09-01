@@ -11,6 +11,9 @@ module.exports = {
         "surface-primary": "#BA68C8",
         "surface-accent": "#fa2862",
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],
