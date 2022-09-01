@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
-import { RoughNotationModule } from 'ng-rough-notation';
+import { RoughNotationModule } from 'ngx-rough-notation';
 
 import { AppComponent } from './app.component';
 import { HeroComponent } from './sections/hero/hero.component';

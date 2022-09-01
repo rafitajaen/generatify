@@ -1,7 +1,12 @@
 <h1 ngClass="font-bold text-white text-4xl text-center">
   Generate
-  <span roughNotation ngClass="relative text-gradient hidden sm:inline">
-    strong and secure</span
+  <rough-notation
+    type="highlight"
+    [show]="true"
+    [color]="'rgb(254 240 138)'"
+    ngClass="relative text-gradient hidden sm:inline bg-yellow-200"
+  >
+    strong and secure</rough-notation
   >
   <span ngClass="relative text-gradient inline sm:hidden">
     strong and secure</span
