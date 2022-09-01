@@ -3,11 +3,12 @@
   <rough-notation
     type="highlight"
     [show]="true"
+    [animationDuration]="1200"
     [color]="'rgb(254 240 138)'"
-    ngClass="relative text-gradient hidden sm:inline bg-yellow-200"
+    ngClass="relative text-gradient hidden sm:inline"
   >
-    strong and secure</rough-notation
-  >
+    strong and secure
+  </rough-notation>
   <span ngClass="relative text-gradient inline sm:hidden">
     strong and secure</span
   >
@@ -19,12 +20,13 @@
 >
   Mix letters, numbers and symbols to get a random password and check the
   strength of your password
-  <span ngClass="relative inline-block text-white font-normal">
+  <rough-notation
+    type="underline"
+    [show]="true"
+    [animate]="false"
+    [color]="'rgb(250 40 98)'"
+    ngClass="relative inline-block text-white font-normal "
+  >
     for all your online accounts.
-    <img
-      ngClass="absolute right-0 -bottom-1"
-      src="assets/underline.svg"
-      alt="underline"
-    />
-  </span>
+  </rough-notation>
 </p>
