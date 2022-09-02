@@ -2,3 +2,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "../node_modules/ngx-popperjs/scss/theme-dark";
+
+/*
+  PropperJS Styles:
+
+  ? How to change Popperjs Background and text color:
+
+    @include ngx-popperjs-theme(rgb(244 114 182), white);
+
+*/

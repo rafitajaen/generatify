@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgxPopperjsPlacements, NgxPopperjsTriggers } from "ngx-popperjs";
 
 @Component({
   selector: 'app-password-strength',
@@ -14,6 +15,13 @@ export class PasswordStrengthComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  public get placements(): typeof NgxPopperjsPlacements {
+    return NgxPopperjsPlacements;
+  }
+  public get triggers(): typeof NgxPopperjsTriggers {
+    return NgxPopperjsTriggers;
   }
 
 }

@@ -26,8 +26,9 @@
     "@zxcvbn-ts/language-en": "^2.0.1",
     "generate-password-ts": "^1.6.3",
     "ngx-clipboard": "^15.1.0",
-    "rough-notation": "^0.5.1",
+    "ngx-popperjs": "^14.1.0",
     "ngx-rough-notation": "^0.4.0",
+    "rough-notation": "^0.5.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "^0.11.8"

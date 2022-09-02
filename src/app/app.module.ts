@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
 import { RoughNotationModule } from 'ngx-rough-notation';
+import { NgxPopperjsModule } from 'ngx-popperjs';
 import { NgIconsModule } from '@ng-icons/core';
 
 import { AppComponent } from './app.component';
@@ -16,7 +17,7 @@ import { DogIllustrationComponent } from './illustrations/dog-illustration/dog-i
 import { PasswordInputComponent } from './sections/hero/components/generator/password-input/password-input.component';
 import { PasswordStrengthComponent } from './sections/hero/components/generator/password-strength/password-strength.component';
 
-import { heroInformationCircle } from '@ng-icons/heroicons/outline';
+import { heroInformationCircle, heroDocumentDuplicate, heroArrowPathRoundedSquare } from '@ng-icons/heroicons/outline';
 
 
 
@@ -39,7 +40,8 @@ import { heroInformationCircle } from '@ng-icons/heroicons/outline';
     ReactiveFormsModule,
     ClipboardModule,
     RoughNotationModule,
-    NgIconsModule.withIcons({ heroInformationCircle }),
+    NgxPopperjsModule,
+    NgIconsModule.withIcons({ heroInformationCircle, heroDocumentDuplicate, heroArrowPathRoundedSquare }),
   ],
   providers: [],
   bootstrap: [AppComponent]
