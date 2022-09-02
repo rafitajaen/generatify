@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Checkbox } from 'src/app/enums/checkbox';
+import { Password } from 'src/app/interfaces/password';
 import { PasswordGeneratorService } from 'src/app/services/password-generator.service';
 
 
@@ -11,7 +12,7 @@ import { PasswordGeneratorService } from 'src/app/services/password-generator.se
 })
 export class PasswordFormComponent implements OnInit {
 
-  password: string;
+  password: Password;
   advanced: boolean;
   last: boolean;
 
@@ -19,30 +20,32 @@ export class PasswordFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private generator: PasswordGeneratorService) {
 
-    this.password = '';
+    this.password = { value: "", crackTime: "", score: 0 };
     this.advanced = false;
     this.last = false;
 
     this.form = formBuilder.group({
-      length: [10, [Validators.required, Validators.min(1), Validators.max(100)]],
-      numbers: [false],
+      length: [7, [Validators.required, Validators.min(1), Validators.max(100)]],
+      numbers: [true],
       symbols: [false],
       lowercase: [true],
       uppercase: [true],
-      excludeSimilarCharacters: [false],
+      excludeSimilarCharacters: [true],
       exclude: [''],
-      strict: [false],
+      strict: [true],
     });
   }
 
   ngOnInit(): void {
     // https://www.tektutorialshub.com/angular/valuechanges-in-angular-forms/
 
-    this.password = this.generator.getPassword(this.form.value);
+    this.password = this.generator.generate(this.form.value);
     this.last = this.lastCheckboxActive();
 
     this.form.valueChanges.subscribe(selectedValue => {
-      this.password = this.generator.getPassword(this.form.value);
+      this.generator.generate(this.form.value);
+
+      this.password = this.generator.generate(this.form.value);
       this.last = this.lastCheckboxActive();
       console.log(this.last)
       console.log('form value changed')
@@ -52,8 +55,9 @@ export class PasswordFormComponent implements OnInit {
   }
 
   regenerateEventHandler($event: any) {
-    this.password = this.generator.getPassword(this.form.value);
+    this.password = this.generator.generate(this.form.value);
   }
+
 
   /**
    * lastCheckboxActive
@@ -88,5 +92,7 @@ export class PasswordFormComponent implements OnInit {
   public get checkbox(): typeof Checkbox {
     return Checkbox;
   }
+
+
 
 }
