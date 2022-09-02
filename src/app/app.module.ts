@@ -18,6 +18,7 @@ import { PasswordInputComponent } from './sections/hero/components/generator/pas
 import { PasswordStrengthComponent } from './sections/hero/components/generator/password-strength/password-strength.component';
 
 import { heroInformationCircle, heroDocumentDuplicate, heroArrowPathRoundedSquare } from '@ng-icons/heroicons/outline';
+import { StrengthScoreBadgeComponent } from './sections/hero/components/generator/strength-score-badge/strength-score-badge.component';
 
 
 
@@ -33,6 +34,7 @@ import { heroInformationCircle, heroDocumentDuplicate, heroArrowPathRoundedSquar
     DogIllustrationComponent,
     PasswordInputComponent,
     PasswordStrengthComponent,
+    StrengthScoreBadgeComponent,
 
   ],
   imports: [

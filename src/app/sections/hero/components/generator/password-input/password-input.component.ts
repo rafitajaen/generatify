@@ -10,10 +10,12 @@ export class PasswordInputComponent implements OnInit {
   copied: boolean;
 
   @Input() password: string;
+  @Input() score: number;
   @Output() regenerateEvent = new EventEmitter<string>();
 
   constructor() {
     this.password = '';
+    this.score = 0;
     this.copied = false;
   }
 

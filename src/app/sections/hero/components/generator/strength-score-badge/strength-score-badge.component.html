@@ -1,0 +1,10 @@
+<span
+  ngClass="px-4 py-2 rounded-md font-poppins font-semibold text-xs text-white text-center "
+  [class.bg-red-600]="score <= 0 || score > 4"
+  [class.bg-orange-600]="score === 1"
+  [class.bg-yellow-500]="score === 2"
+  [class.bg-green-600]="score === 3"
+  [class.bg-cyan-600]="score === 4"
+>
+  {{ text }}
+</span>

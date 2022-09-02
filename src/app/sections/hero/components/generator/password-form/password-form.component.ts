@@ -32,7 +32,7 @@ export class PasswordFormComponent implements OnInit {
       uppercase: [true],
       excludeSimilarCharacters: [true],
       exclude: [''],
-      strict: [true],
+      strict: [false],
     });
   }
 
