@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import generator from 'generate-password-ts';
 import { zxcvbn, zxcvbnOptions } from '@zxcvbn-ts/core';
 import zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
@@ -24,6 +24,8 @@ export class PasswordGeneratorService {
 
   private _options: OptionsType;
 
+  onChange = new EventEmitter<Password>();
+
   // Public Getters
   public get password(): string {
     return this._password.value;
@@ -34,6 +36,8 @@ export class PasswordGeneratorService {
   public get score(): number {
     return this._password.score;
   }
+
+
 
 
   constructor() {
@@ -63,6 +67,8 @@ export class PasswordGeneratorService {
 
     this._password.crackTime = result.crackTimesDisplay.onlineNoThrottling10PerSecond;
     this._password.score = result.score.valueOf();
+
+    this.onChange.emit(this._password);
 
     return this._password;
   }

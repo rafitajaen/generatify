@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-larry-good',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./larry-good.component.scss']
 })
 export class LarryGoodComponent implements OnInit {
+
+  @Input() width = 500;
+  @Input() height = 300;
 
   constructor() { }
 
