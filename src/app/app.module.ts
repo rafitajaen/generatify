@@ -19,6 +19,11 @@ import { PasswordStrengthComponent } from './sections/hero/components/generator/
 
 import { heroInformationCircle, heroDocumentDuplicate, heroArrowPathRoundedSquare } from '@ng-icons/heroicons/outline';
 import { StrengthScoreBadgeComponent } from './sections/hero/components/generator/strength-score-badge/strength-score-badge.component';
+import { LarryVulnerableComponent } from './illustrations/larry-vulnerable/larry-vulnerable.component';
+import { LarryWeakComponent } from './illustrations/larry-weak/larry-weak.component';
+import { LarryGoodComponent } from './illustrations/larry-good/larry-good.component';
+import { LarryStrongComponent } from './illustrations/larry-strong/larry-strong.component';
+import { LarrySecureComponent } from './illustrations/larry-secure/larry-secure.component';
 
 
 
@@ -35,6 +40,11 @@ import { StrengthScoreBadgeComponent } from './sections/hero/components/generato
     PasswordInputComponent,
     PasswordStrengthComponent,
     StrengthScoreBadgeComponent,
+    LarryVulnerableComponent,
+    LarryWeakComponent,
+    LarryGoodComponent,
+    LarryStrongComponent,
+    LarrySecureComponent,
 
   ],
   imports: [
