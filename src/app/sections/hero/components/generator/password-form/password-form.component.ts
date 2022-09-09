@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Checkbox } from 'src/app/enums/checkbox';
+import { Options } from 'generate-password-ts/dist/Options';
 import { Password } from 'src/app/interfaces/password';
 import { PasswordGeneratorService } from 'src/app/services/password-generator.service';
 
@@ -20,9 +20,7 @@ export class PasswordFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private generator: PasswordGeneratorService) {
 
-    this.password = { value: "", crackTime: "", score: 0 };
     this.advanced = false;
-    this.last = false;
 
     this.form = formBuilder.group({
       length: [7, [Validators.required, Validators.min(1), Validators.max(100)]],
@@ -34,30 +32,22 @@ export class PasswordFormComponent implements OnInit {
       exclude: [''],
       strict: [false],
     });
+
+    this.password = this.generator.generate(this.form.value as Options);
+
+    this.last = this.lastCheckboxActive();
   }
 
   ngOnInit(): void {
     // https://www.tektutorialshub.com/angular/valuechanges-in-angular-forms/
 
-    this.password = this.generator.generate(this.form.value);
-    this.last = this.lastCheckboxActive();
+    this.form.valueChanges.subscribe(formValues => {
 
-    this.form.valueChanges.subscribe(selectedValue => {
-      this.generator.generate(this.form.value);
-
-      this.password = this.generator.generate(this.form.value);
+      this.password = this.generator.generate(formValues as Options);
       this.last = this.lastCheckboxActive();
-      console.log(this.last)
-      console.log('form value changed')
-      console.log(selectedValue)
-      console.log(this.password)
+
     })
   }
-
-  regenerateEventHandler($event: any) {
-    this.password = this.generator.generate(this.form.value);
-  }
-
 
   /**
    * lastCheckboxActive
@@ -73,26 +63,9 @@ export class PasswordFormComponent implements OnInit {
     return [value.numbers, value.symbols, value.lowercase, value.uppercase].filter(Boolean).length === 1;
   }
 
-  disableCheckbox(checkbox: Checkbox): string | null {
+  disableCheckbox(checkbox: string): string | null {
 
-    switch (checkbox) {
-      case Checkbox.numbers:
-        return this.last && this.form.value.numbers ? '' : null;
-      case Checkbox.symbols:
-        return this.last && this.form.value.symbols ? '' : null;
-      case Checkbox.lowercase:
-        return this.last && this.form.value.lowercase ? '' : null;
-      case Checkbox.uppercase:
-        return this.last && this.form.value.uppercase ? '' : null;
-      default:
-        return null;
-    }
+    return this.last && this.form.value[checkbox] ? '' : null;
   }
-
-  public get checkbox(): typeof Checkbox {
-    return Checkbox;
-  }
-
-
 
 }

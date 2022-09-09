@@ -5,6 +5,8 @@ import zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
 import zxcvbnEnPackage from '@zxcvbn-ts/language-en';
 import { OptionsType } from '@zxcvbn-ts/core/dist/types';
 import { Password } from '../interfaces/password';
+import { Options } from 'generate-password-ts/dist/Options';
+import { FormGroup } from '@angular/forms';
 
 /**
  * Password Generator Service
@@ -22,12 +24,12 @@ export class PasswordGeneratorService {
 
   private _password: Password;
 
-  private _options: OptionsType;
+  private _options: Options;
 
   onChange = new EventEmitter<Password>();
 
   // Public Getters
-  public get password(): string {
+  public get value(): string {
     return this._password.value;
   }
   public get crackTime(): string {
@@ -36,6 +38,9 @@ export class PasswordGeneratorService {
   public get score(): number {
     return this._password.score;
   }
+  public get password(): Password {
+    return this._password;
+  }
 
 
 
@@ -43,7 +48,7 @@ export class PasswordGeneratorService {
   constructor() {
 
     // STEP 1: Initialize zxcvbn Options
-    this._options = {
+    var strengthOptions: OptionsType = {
       dictionary: {
         ...zxcvbnCommonPackage.dictionary,
         ...zxcvbnEnPackage.dictionary,
@@ -53,17 +58,22 @@ export class PasswordGeneratorService {
     }
 
     // STEP 2: Set zxcvbn Options
-    zxcvbnOptions.setOptions(this._options);
+    zxcvbnOptions.setOptions(strengthOptions);
 
     // STEP 3: Initialize password
     this._password = { value: "", crackTime: "", score: 0 };
 
+    // STEP 4: Initialize options
+    this._options = {}
   }
 
-  generate(userOptions: any): Password {
-    this._password.value = generator.generate(userOptions);
+  generate(options?: Options): Password {
 
-    const result = zxcvbn(this.password);
+    if (options) this._options = options;
+
+    this._password.value = generator.generate(this._options);
+
+    const result = zxcvbn(this._password.value);
 
     this._password.crackTime = result.crackTimesDisplay.onlineNoThrottling10PerSecond;
     this._password.score = result.score.valueOf();

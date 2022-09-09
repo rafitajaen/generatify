@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Password } from 'src/app/interfaces/password';
+import { PasswordGeneratorService } from 'src/app/services/password-generator.service';
 
 @Component({
   selector: 'app-password-input',
@@ -9,18 +11,20 @@ export class PasswordInputComponent implements OnInit {
 
   copied: boolean;
 
-  @Input() password: string;
-  @Input() score: number;
-  @Output() regenerateEvent = new EventEmitter<string>();
+  private _password: Password;
 
-  constructor() {
-    this.password = '';
-    this.score = 0;
+  public get password(): Password {
+    return this._password;
+  }
+
+  constructor(private generator: PasswordGeneratorService) {
+    this._password = this.generator.password;
     this.copied = false;
   }
 
   ngOnInit(): void {
 
+    this.generator.onChange.subscribe((p: Password) => this._password = p);
   }
 
   onCopied() {
@@ -29,7 +33,7 @@ export class PasswordInputComponent implements OnInit {
   }
 
   onRegenerate() {
-    this.regenerateEvent.emit(this.password);
+    this.generator.generate();
   }
 
 }
