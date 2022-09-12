@@ -13,14 +13,18 @@ import { PasswordGeneratorService } from 'src/app/services/password-generator.se
 export class PasswordFormComponent implements OnInit {
 
   password: Password;
-  advanced: boolean;
+  private _advanced: boolean;
   last: boolean;
 
   form: FormGroup;
 
+  get advanced(): boolean {
+    return this._advanced;
+  }
+
   constructor(private formBuilder: FormBuilder, private generator: PasswordGeneratorService) {
 
-    this.advanced = false;
+    this._advanced = false;
 
     this.form = formBuilder.group({
       length: [7, [Validators.required, Validators.min(1), Validators.max(100)]],
@@ -66,6 +70,10 @@ export class PasswordFormComponent implements OnInit {
   disableCheckbox(checkbox: string): string | null {
 
     return this.last && this.form.value[checkbox] ? '' : null;
+  }
+
+  toggleAdvancedSettings() {
+    this._advanced = !this._advanced;
   }
 
 }

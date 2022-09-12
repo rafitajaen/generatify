@@ -46,8 +46,7 @@ import { heroInformationCircle, heroDocumentDuplicate, heroArrowPathRoundedSquar
     LarryWeakComponent,
     LarryGoodComponent,
     LarryStrongComponent,
-    LarrySecureComponent,
-
+    LarrySecureComponent
   ],
   imports: [
     BrowserModule,
