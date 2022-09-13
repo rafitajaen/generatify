@@ -1,5 +1,12 @@
-<main
-  ngClass="overflow-x-hidden md:overflow-visible bg-surface-back text-white font-poppins"
->
-  <app-hero></app-hero>
+<main ngClass="overflow-x-hidden md:overflow-visible mb-5 bg-gray-900">
+  <app-hero
+    ngClass="container mx-auto flex flex-col items-center gap-12 py-10"
+  ></app-hero>
 </main>
+
+<footer ngClass="overflow-x-hidden md:overflow-visible pb-8 bg-gray-900">
+  <div class="border-t border-gray-800"></div>
+  <app-footer
+    ngClass="flex flex-col sm:flex-row items-center justify-center sm:justify-around gap-y-4"
+  ></app-footer>
+</footer>

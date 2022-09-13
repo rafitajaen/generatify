@@ -13,3 +13,7 @@
     @include ngx-popperjs-theme(rgb(244 114 182), white);
 
 */
+
+body {
+  @apply bg-gray-900 text-white font-poppins;
+}

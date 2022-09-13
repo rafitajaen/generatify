@@ -27,6 +27,7 @@ import { LarrySecureComponent } from './illustrations/larry-secure/larry-secure.
 
 //Icons
 import { heroInformationCircle, heroDocumentDuplicate, heroArrowPathRoundedSquare } from '@ng-icons/heroicons/outline';
+import { FooterComponent } from './sections/footer/footer/footer.component';
 
 
 
@@ -46,7 +47,8 @@ import { heroInformationCircle, heroDocumentDuplicate, heroArrowPathRoundedSquar
     LarryWeakComponent,
     LarryGoodComponent,
     LarryStrongComponent,
-    LarrySecureComponent
+    LarrySecureComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
