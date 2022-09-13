@@ -1,7 +1,6 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { GeneratorComponent } from './components/generator/generator.component';
-import { HeaderComponent } from './components/header/header.component';
-import { LogoComponent } from './components/logo/logo.component';
+import { By } from '@angular/platform-browser';
 
 import { HeroComponent } from './hero.component';
 
@@ -11,7 +10,8 @@ describe('HeroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HeroComponent, LogoComponent, HeaderComponent, GeneratorComponent]
+      declarations: [HeroComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
 
@@ -22,5 +22,20 @@ describe('HeroComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('renders logo component', () => {
+    const logo = fixture.debugElement.query(By.css('app-logo'));
+    expect(logo).toBeTruthy();
+  });
+
+  it('renders header component', () => {
+    const header = fixture.debugElement.query(By.css('app-header'));
+    expect(header).toBeTruthy();
+  });
+
+  it('renders generator component', () => {
+    const generator = fixture.debugElement.query(By.css('app-generator'));
+    expect(generator).toBeTruthy();
   });
 });

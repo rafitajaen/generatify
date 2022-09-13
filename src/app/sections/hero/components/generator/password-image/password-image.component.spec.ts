@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PasswordImageComponent } from './password-image.component';
@@ -8,9 +9,10 @@ describe('PasswordImageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PasswordImageComponent ]
+      declarations: [PasswordImageComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PasswordImageComponent);
     component = fixture.componentInstance;

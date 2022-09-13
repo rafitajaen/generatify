@@ -1,4 +1,6 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgxPopperjsModule } from 'ngx-popperjs';
 
 import { PasswordStrengthComponent } from './password-strength.component';
 
@@ -8,9 +10,11 @@ describe('PasswordStrengthComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PasswordStrengthComponent ]
+      declarations: [PasswordStrengthComponent],
+      imports: [NgxPopperjsModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PasswordStrengthComponent);
     component = fixture.componentInstance;
