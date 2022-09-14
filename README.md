@@ -1,27 +1,44 @@
-# Generatify
+<h1 align="center">
+Generatify <br /> Strong and Secure Passwords Generator for Online Accounts
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+Generatify is an open source [Angular 14]() SPA (_Single Page Application_) written in [Typescript](https://) and built with [TailwindCSS]().
 
-## Development server
+The **main purpose** of the application is to **generate strong and secure passwords** by randomly combining letters, numbers and characters.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+In this way, the application **prevents patterns** that can make the password an easy target **for brute force attacks**.
 
-## Code scaffolding
+## Screenshot
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+You can visit a LIVE Demo here: [Generatify LIVE Website]()
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Run Generatify locally
 
-## Running unit tests
+If you prefer to run this application locally you must first make sure you have the [latest LTS version of nodejs](https://nodejs.org/en/) installed.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+By the time you have already installed a version of nodejs :
 
-## Running end-to-end tests
+1.  Open your IDE
+2.  Clone this repository
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    ```
+      git clone https://github.com/rafitajaen/generatify.git
+    ```
 
-## Further help
+3.  Build and serve your application. Run the following command on your console:
+    ```
+      ng serve
+    ```
+4.  Open your browser [http://localhost:4200]()
+
+## Documentation
+
+## License
+
+## Credits and Resources Links
+
+## Further Help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
