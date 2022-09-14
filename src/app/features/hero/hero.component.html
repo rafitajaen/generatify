@@ -1,0 +1,30 @@
+<header ngClass="flex flex-col items-center gap-3 mt-4 mb-8">
+  <logo-icon
+    ngClass="inline-flex items-center justify-start bg-gradient-to-tr to-fuchsia-500 from-pink-500 shadow-lg shadow-slate-900 p-3 rounded-2xl border-lg"
+  ></logo-icon>
+  <logo-text></logo-text>
+</header>
+
+<main>
+  <h1 ngClass="font-bold text-4xl text-white text-center my-4">
+    Generate
+    <span ngClass="text-gradient inline"> strong and secure</span>
+    passwords.
+  </h1>
+
+  <p
+    ngClass="font-extralight text-lg text-gray-400 text-center mx-6 sm:mx-auto max-w-lg md:max-w-2xl"
+  >
+    Mix letters, numbers and symbols to get a random password and check the
+    strength of your password
+    <rough-notation
+      type="underline"
+      [show]="true"
+      [animate]="false"
+      [color]="'rgb(250 40 98)'"
+      ngClass="inline-block text-white font-light "
+    >
+      for all your online accounts.
+    </rough-notation>
+  </p>
+</main>

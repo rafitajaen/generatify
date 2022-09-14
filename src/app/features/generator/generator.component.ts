@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Options } from 'generate-password-ts/dist/Options';
-import { Password } from 'src/app/interfaces/password';
-import { PasswordGeneratorService } from 'src/app/services/password-generator.service';
-
+import { Password } from 'src/app/core/models/password';
+import { PasswordGeneratorService } from 'src/app/core/services/password-generator.service';
 
 @Component({
-  selector: 'app-password-form',
-  templateUrl: './password-form.component.html',
-  styleUrls: ['./password-form.component.scss']
+  selector: 'generator',
+  templateUrl: './generator.component.html',
+  styleUrls: ['./generator.component.scss']
 })
-export class PasswordFormComponent implements OnInit {
+export class GeneratorComponent implements OnInit {
 
   password: Password;
   private _advanced: boolean;

@@ -1,12 +1,18 @@
 import { EventEmitter, Injectable } from '@angular/core';
+
+// Generate Password Package
 import generator from 'generate-password-ts';
+import { Options } from 'generate-password-ts/dist/Options';
+
+// zxcvbn Package
 import { zxcvbn, zxcvbnOptions } from '@zxcvbn-ts/core';
 import zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
 import zxcvbnEnPackage from '@zxcvbn-ts/language-en';
 import { OptionsType } from '@zxcvbn-ts/core/dist/types';
-import { Password } from '../interfaces/password';
-import { Options } from 'generate-password-ts/dist/Options';
-import { FormGroup } from '@angular/forms';
+
+// Custom Model
+import { Password } from '../models/password';
+
 
 /**
  * Password Generator Service
@@ -23,10 +29,10 @@ import { FormGroup } from '@angular/forms';
 export class PasswordGeneratorService {
 
   private _password: Password;
-
   private _options: Options;
 
   onChange = new EventEmitter<Password>();
+
 
   // Public Getters
   public get value(): string {
@@ -41,8 +47,6 @@ export class PasswordGeneratorService {
   public get password(): Password {
     return this._password;
   }
-
-
 
 
   constructor() {

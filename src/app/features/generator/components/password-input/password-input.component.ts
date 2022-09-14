@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Password } from 'src/app/interfaces/password';
-import { PasswordGeneratorService } from 'src/app/services/password-generator.service';
+import { Password } from 'src/app/core/models/password';
+import { PasswordGeneratorService } from 'src/app/core/services/password-generator.service';
 
 @Component({
   selector: 'app-password-input',
