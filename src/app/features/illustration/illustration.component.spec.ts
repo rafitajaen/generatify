@@ -1,23 +1,27 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { IllustrationComponent } from './illustration.component';
+import { IllustrationModule } from './illustration.module';
 
-describe('IllustrationComponent', () => {
-  let component: IllustrationComponent;
-  let fixture: ComponentFixture<IllustrationComponent>;
+describe("IllustrationComponent", () => {
+  let component: IllustrationComponent,
+    fixture: ComponentFixture<IllustrationComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ IllustrationComponent ]
-    })
-    .compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [IllustrationModule]
+    }).compileComponents()
+      .then(() => {
 
-    fixture = TestBed.createComponent(IllustrationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(IllustrationComponent);
+        component = fixture.componentInstance;
 
-  it('should create', () => {
+        fixture.detectChanges();
+
+      })
+  }));
+
+  it("should create", () => {
     expect(component).toBeTruthy();
-  });
+  })
 });
