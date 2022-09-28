@@ -37,19 +37,18 @@ export class GeneratorComponent implements OnInit {
     });
 
     this.password = this.generator.generate(this.form.value as Options);
-
     this.last = this.lastCheckboxActive();
   }
 
   ngOnInit(): void {
-    // https://www.tektutorialshub.com/angular/valuechanges-in-angular-forms/
 
     this.form.valueChanges.subscribe(formValues => {
 
       this.password = this.generator.generate(formValues as Options);
       this.last = this.lastCheckboxActive();
 
-    })
+    });
+
   }
 
   /**
@@ -61,9 +60,11 @@ export class GeneratorComponent implements OnInit {
    */
 
   lastCheckboxActive(): boolean {
+
     const value = this.form.value;
 
     return [value.numbers, value.symbols, value.lowercase, value.uppercase].filter(Boolean).length === 1;
+
   }
 
   disableCheckbox(checkbox: string): string | null {

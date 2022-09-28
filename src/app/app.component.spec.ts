@@ -1,27 +1,30 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { HeroComponent } from './sections/hero/hero.component';
+import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        HeroComponent
+  let component: AppComponent,
+    fixture: ComponentFixture<AppComponent>;
+
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        AppModule
       ],
-    }).compileComponents();
-  });
+    }).compileComponents()
+      .then(() => {
+        fixture = TestBed.createComponent(AppComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+      });
+  }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
   it(`should have as title 'generatify'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('generatify');
+    expect(component.title).toEqual('generatify');
   });
 
 });
