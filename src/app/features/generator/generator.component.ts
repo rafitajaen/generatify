@@ -76,4 +76,8 @@ export class GeneratorComponent implements OnInit {
     this._advanced = !this._advanced;
   }
 
+  ngOnDestroy(): void {
+    this.generator.onChange.unsubscribe();
+  }
+
 }

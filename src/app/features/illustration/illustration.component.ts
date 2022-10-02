@@ -12,11 +12,15 @@ export class IllustrationComponent implements OnInit {
   password: Password;
 
   constructor(private generator: PasswordGeneratorService) {
-    this.password = { value: "", crackTime: "", score: 0 };
+    this.password = this.generator.password;
   }
 
   ngOnInit(): void {
     this.generator.onChange.subscribe((p: Password) => this.password = p);
+  }
+
+  ngOnDestroy(): void {
+    this.generator.onChange.unsubscribe();
   }
 
 }
